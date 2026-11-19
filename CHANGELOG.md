@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.18.0](https://github.com/googleapis/mcp-toolbox/compare/v1.17.0...v1.18.0) (2026-11-19)
+
+
+### Features
+
+* **tool/clickhouse-execute-sql:** Bind query parameters on the server ([#4354](https://github.com/googleapis/mcp-toolbox/issues/4354)) ([ef822ce](https://github.com/googleapis/mcp-toolbox/commit/ef822ceaa77d4fe36d780635ed7279ac7c091021))
+
+
+### Bug Fixes
+
+* **cmd:** Run telemetry shutdown with an uncanceled bounded context ([#4148](https://github.com/googleapis/mcp-toolbox/issues/4148)) ([dcdbbae](https://github.com/googleapis/mcp-toolbox/commit/dcdbbaea95730b8f91c5f23b4bfd8923f4b35d6f))
+* **parameters:** Enforce full-input matching in MatchStringOrRegex ([#4522](https://github.com/googleapis/mcp-toolbox/issues/4522)) ([7f366ff](https://github.com/googleapis/mcp-toolbox/commit/7f366ff878ef300ee4b913dcffd90a7a31977d1c))
+* **prebuilt/sqlite:** Bind query parameters in list_tables ([#4535](https://github.com/googleapis/mcp-toolbox/issues/4535)) ([9a8a4f0](https://github.com/googleapis/mcp-toolbox/commit/9a8a4f090c124dd6e9e0b41eefcd1ce222a68830))
+* **server,tool/conversational-analytics:** Resolve CodeQL dynamic call and allocation alerts ([#4489](https://github.com/googleapis/mcp-toolbox/issues/4489)) ([3bb1e24](https://github.com/googleapis/mcp-toolbox/commit/3bb1e24858f105724e7c5d06c9b284b55ef9ee71))
+* **server/mcp:** Preserve integer argument precision ([#4435](https://github.com/googleapis/mcp-toolbox/issues/4435)) ([a09d12d](https://github.com/googleapis/mcp-toolbox/commit/a09d12dbbba47ee82bc7ce33c3eaee4634a496c1))
+* **source/databaseinsights:** Validate parent resource name before building endpoint ([#4532](https://github.com/googleapis/mcp-toolbox/issues/4532)) ([0e9fc2f](https://github.com/googleapis/mcp-toolbox/commit/0e9fc2f8261894786b97a052160f4c3e1611e96d))
+* **source/mssql,source/cloudsqlmssql:** Include the server's messages in severe errors ([#4445](https://github.com/googleapis/mcp-toolbox/issues/4445)) ([d6b2bd7](https://github.com/googleapis/mcp-toolbox/commit/d6b2bd7f7962a7740e7ef0792e934018d3bd2420))
+* **sqlite:** Preserve JSON number precision in tool results ([#4431](https://github.com/googleapis/mcp-toolbox/issues/4431)) ([ff59dce](https://github.com/googleapis/mcp-toolbox/commit/ff59dcee02d97a77f374efab65866ce6ff1bf854))
+* **tests:** Only drop MySQL and MSSQL test tables older than 2 hours ([#4453](https://github.com/googleapis/mcp-toolbox/issues/4453)) ([7b86c12](https://github.com/googleapis/mcp-toolbox/commit/7b86c1287391defaa87f97ef8588747a43e85ae2))
+* **tests:** Surface Postgres test-cleanup errors instead of discarding them ([#3967](https://github.com/googleapis/mcp-toolbox/issues/3967)) ([8b53768](https://github.com/googleapis/mcp-toolbox/commit/8b53768fef4d181cf7a92e08dc16cd30aa72c64a))
+* **tool/bigquery-analyze-contribution:** Apply maximumBytesBilled to CREATE TEMP MODEL job ([#4531](https://github.com/googleapis/mcp-toolbox/issues/4531)) ([d7fd6c5](https://github.com/googleapis/mcp-toolbox/commit/d7fd6c5acc691d6ae6fcddb74e3b123c2e89408e))
+* **tool/postgres-database-overview:** Count only client backends as connections ([#4463](https://github.com/googleapis/mcp-toolbox/issues/4463)) ([9a17f8b](https://github.com/googleapis/mcp-toolbox/commit/9a17f8bdf95658e0d86cb76f52fe6407bfd29273))
+* **tool/postgres-get-column-cardinality:** Return one row per column for tables with inheritance children ([#4413](https://github.com/googleapis/mcp-toolbox/issues/4413)) ([1cb1952](https://github.com/googleapis/mcp-toolbox/commit/1cb195209bd47fcc8f32c2736060585697f10e1a))
+* **tool/postgres-list-indexes:** Include indexes on materialized views ([#4504](https://github.com/googleapis/mcp-toolbox/issues/4504)) ([2253fe7](https://github.com/googleapis/mcp-toolbox/commit/2253fe76f09d93a293f6d84539799dd4610c1f54))
+* **tool/postgres-list-roles:** Escape underscore in system role filters ([#4380](https://github.com/googleapis/mcp-toolbox/issues/4380)) ([05f20fe](https://github.com/googleapis/mcp-toolbox/commit/05f20fe60d18823d23e5fc791685b2dad4df221a))
+* **tool/postgres-replication-stats:** Support running replication_stats and list_replication_slots on a standby ([#4471](https://github.com/googleapis/mcp-toolbox/issues/4471)) ([2b6d51f](https://github.com/googleapis/mcp-toolbox/commit/2b6d51f9ac91a62eec27dfa2693f515776b2a071))
+* **tool/redis,tool/valkey:** Send integer, float and boolean parameters as their value ([#4378](https://github.com/googleapis/mcp-toolbox/issues/4378)) ([6fe3da9](https://github.com/googleapis/mcp-toolbox/commit/6fe3da974f0447e84e1b337f2a09eeed201ba6fc))
+
 ## [1.17.0](https://github.com/googleapis/mcp-toolbox/compare/v1.16.0...v1.17.0) (2026-11-12)
 
 
