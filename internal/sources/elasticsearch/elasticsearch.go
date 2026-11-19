@@ -17,6 +17,7 @@ package elasticsearch
 import (
 	"bytes"
 	"context"
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -56,6 +57,10 @@ type Config struct {
 	Username  string   `yaml:"username"`
 	Password  string   `yaml:"password"`
 	APIKey    string   `yaml:"apikey"`
+
+	// InsecureSkipVerify disables TLS certificate verification. Use only for
+	// development against clusters with self-signed certificates.
+	InsecureSkipVerify bool `yaml:"insecureSkipVerify"`
 }
 
 func (c Config) SourceConfigType() string {
@@ -99,6 +104,13 @@ func (c Config) Initialize(ctx context.Context, tracer trace.Tracer) (sources.So
 		elasticsearch.WithAddresses(c.Addresses...),
 		elasticsearch.WithInstrumentation(elasticsearch.NewOpenTelemetryInstrumentation(tracerProvider, false)),
 		elasticsearch.WithTransportOptions(elastictransport.WithHeader(http.Header{"User-Agent": []string{ua + " go-elasticsearch/" + elasticsearch.Version}})),
+	}
+
+	if c.InsecureSkipVerify {
+		// Clone the default transport to keep proxy and timeout defaults.
+		tr := http.DefaultTransport.(*http.Transport).Clone()
+		tr.TLSClientConfig = &tls.Config{InsecureSkipVerify: true} //nolint:gosec // opt-in via config
+		opts = append(opts, elasticsearch.WithTransportOptions(elastictransport.WithTransport(tr)))
 	}
 
 	// Client need either username and password or an API key
